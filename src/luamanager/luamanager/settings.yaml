@@ -1,0 +1,7 @@
+facebook:
+    posts_profile: LivreUniaoAcademica
+    key: fb_app_id 
+    secret: fb_app_secret
+django:
+    secret: django_secret
+    debug: True

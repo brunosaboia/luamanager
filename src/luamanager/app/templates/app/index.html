@@ -1,0 +1,32 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>Últimas notícias</h2>
+<h3>Para saber mais, <a href="{{fb_profile.link}}">visite nossa página no Facebook</a></h3>
+<hr />
+{% for post in fb_posts %}
+ <div class="well">
+      <div class="media">
+      <a class="pull-left" href="{{post.link}}">
+      <img class="media-object" src="{{post.picture_url}}" alt="Post">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"> {{post.description}}</h4>
+          <p class="text-right">{{post.author}}</p>
+          <p> {{post.message}}</p>
+          <ul class="list-inline list-unstyled">
+            <li><span><i class="glyphicon glyphicon-calendar"></i> {{post.created_at|date:'d/m/Y H:i' }} </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-share-alt"></i> {{post.shares}} </span>
+            </ul>
+       </div>
+    </div>
+  </div>
+
+<hr/>
+
+{% endfor %}
+<div class="row">
+</div>
+{% endblock %}
